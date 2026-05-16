@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bilder – Oberschule Am Sportzentrum Riesa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#fdf6f0;--bg2:#f5ece3;--ink:#1a1208;--ink2:#5a4a38;--accent:#c0390a;--accent2:#e05a1a;--accent3:#fdd5b8;--card:#ffffff;--border:#e8d8c8;--radius:16px;--radius-sm:8px;--shadow:0 4px 24px rgba(192,57,10,0.10);--shadow-hover:0 8px 40px rgba(192,57,10,0.18);}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.65;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:0.5;}
+  nav{position:sticky;top:0;z-index:100;background:rgba(253,246,240,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 clamp(1rem,4vw,3rem);}
+  .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;height:68px;gap:2rem;}
+  .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;}
+  .nav-logo-text{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;line-height:1.2;color:var(--ink);}
+  .nav-logo-text span{display:block;font-size:11px;font-weight:400;color:var(--ink2);}
+  .nav-links{display:flex;list-style:none;gap:0.15rem;margin-left:auto;flex-wrap:wrap;}
+  .nav-links a{display:block;padding:6px 13px;color:var(--ink2);text-decoration:none;font-size:14px;border-radius:var(--radius-sm);transition:all 0.2s;white-space:nowrap;}
+  .nav-links a:hover{background:var(--accent3);color:var(--accent);}
+  .nav-links a.active{background:var(--accent);color:#fff;}
+  .nav-menu-btn{display:none;background:none;border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:8px 10px;cursor:pointer;margin-left:auto;flex-direction:column;gap:5px;}
+  .nav-menu-btn span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;}
+  .mobile-nav{display:none;position:fixed;top:68px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border);padding:1rem clamp(1rem,4vw,3rem);z-index:99;flex-direction:column;gap:4px;box-shadow:0 8px 32px rgba(0,0,0,0.1);}
+  .mobile-nav.open{display:flex;}
+  .mobile-nav a{padding:10px 14px;color:var(--ink);text-decoration:none;font-size:15px;border-radius:var(--radius-sm);}
+  .mobile-nav a:hover{background:var(--accent3);color:var(--accent);}
+  .page-hero{background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);color:#fff;padding:clamp(2.5rem,6vw,4.5rem) clamp(1rem,4vw,3rem);}
+  .page-hero-inner{max-width:1200px;margin:0 auto;}
+  .page-hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:5px 14px;border-radius:999px;margin-bottom:1rem;}
+  .page-hero h1{font-family:'Syne',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:800;line-height:1.08;letter-spacing:-0.03em;margin-bottom:0.75rem;}
+  .page-hero p{opacity:0.82;font-size:1.05rem;font-weight:300;max-width:540px;}
+  .section{max-width:1200px;margin:0 auto;padding:3rem clamp(1rem,4vw,3rem);}
+  .section-label{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent2);margin-bottom:0.5rem;}
+  .section-title{font-family:'Syne',sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;letter-spacing:-0.02em;line-height:1.15;margin-bottom:1.5rem;}
+  .divider{height:1px;background:var(--border);margin:0 clamp(1rem,4vw,3rem);}
+
+  /* ALBUM TABS */
+  .album-tabs{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:2rem;}
+  .album-tab{padding:8px 18px;border-radius:999px;font-size:13px;font-weight:500;cursor:pointer;border:1.5px solid var(--border);background:var(--card);color:var(--ink2);transition:all 0.2s;user-select:none;}
+  .album-tab.active,.album-tab:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
+
+  /* GALLERY GRID */
+  .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;}
+  .gallery-item{border-radius:var(--radius);overflow:hidden;background:var(--accent3);aspect-ratio:4/3;position:relative;cursor:pointer;transition:all 0.28s;}
+  .gallery-item:hover{transform:scale(1.03);box-shadow:var(--shadow-hover);}
+  .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s;}
+  .gallery-item:hover img{transform:scale(1.06);}
+  .gallery-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(26,18,8,0.75) 0%,transparent 100%);color:#fff;padding:1.25rem 1rem 0.85rem;font-size:13px;font-weight:500;opacity:0;transition:opacity 0.25s;pointer-events:none;}
+  .gallery-item:hover .gallery-caption{opacity:1;}
+  .gallery-tag{display:inline-block;background:rgba(255,255,255,0.25);backdrop-filter:blur(4px);border-radius:999px;font-size:11px;padding:2px 10px;margin-top:4px;}
+
+  /* LIGHTBOX */
+  .lightbox{display:none;position:fixed;inset:0;background:rgba(26,18,8,0.92);z-index:500;align-items:center;justify-content:center;padding:2rem;}
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:90vw;max-height:85vh;border-radius:12px;object-fit:contain;box-shadow:0 24px 80px rgba(0,0,0,0.5);}
+  .lightbox-close{position:fixed;top:1.5rem;right:1.5rem;background:rgba(255,255,255,0.15);border:none;color:#fff;width:44px;height:44px;border-radius:50%;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);transition:background 0.2s;}
+  .lightbox-close:hover{background:rgba(255,255,255,0.3);}
+  .lightbox-caption{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);background:rgba(255,255,255,0.12);backdrop-filter:blur(8px);color:#fff;padding:8px 20px;border-radius:999px;font-size:14px;font-weight:500;white-space:nowrap;}
+
+  /* ALBUM SECTIONS */
+  .album-section{display:none;}
+  .album-section.active{display:block;}
+  .album-year-label{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--accent);margin-bottom:1rem;margin-top:2rem;display:flex;align-items:center;gap:0.75rem;}
+  .album-year-label::after{content:'';flex:1;height:1px;background:var(--border);}
+
+  .info-box{background:var(--bg2);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:var(--radius);padding:1.5rem 1.75rem;}
+  .info-box h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:0.5rem;color:var(--accent);}
+  .info-box p{font-size:0.875rem;color:var(--ink2);font-weight:300;line-height:1.6;}
+
+  footer{background:var(--ink);color:rgba(255,255,255,0.6);margin-top:5rem;}
+  .footer-inner{max-width:1200px;margin:0 auto;padding:3rem clamp(1rem,4vw,3rem) 2rem;display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:2.5rem;}
+  .footer-col h4{font-family:'Syne',sans-serif;font-weight:600;font-size:0.85rem;color:#fff;letter-spacing:0.04em;margin-bottom:1rem;text-transform:uppercase;}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .footer-col ul a{font-size:0.85rem;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s;}
+  .footer-col ul a:hover{color:rgba(255,255,255,0.85);}
+  .footer-brand p{margin-top:1rem;font-size:0.85rem;line-height:1.7;color:rgba(255,255,255,0.45);}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding:1.25rem clamp(1rem,4vw,3rem);}
+  .footer-bottom-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:12px;color:rgba(255,255,255,0.3);}
+  .footer-bottom-inner a{color:rgba(255,255,255,0.4);text-decoration:none;}
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.55s ease,transform 0.55s ease;}
+  .reveal.visible{opacity:1;transform:none;}
+  @media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr;}.nav-links{display:none;}.nav-menu-btn{display:flex;}}
+  @media(max-width:600px){.footer-inner{grid-template-columns:1fr;}.gallery-grid{grid-template-columns:repeat(2,1fr);gap:0.5rem;}}
+</style>
+</head>
+<body>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/asz-riesa/start.html" class="nav-logo">
+      <div style="width:40px;height:40px;background:transparent;padding:2px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <img src="../fileadmin/_processed_/2/9/csm_Logo-MamSZ_24bc79436c.jpg" alt="ASZ Logo" style="width:36px;height:34px;object-fit:contain;border-radius:6px;">
+      </div>
+      <div class="nav-logo-text">Oberschule Am Sportzentrum<span>Riesa · Sachsen</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/asz-riesa/start.html">Start</a></li>
+      <li><a href="/asz-riesa/termine.html">Termine</a></li>
+      <li><a href="/asz-riesa/bilder.html" class="active">Bilder</a></li>
+      <li><a href="/asz-riesa/schulprofil.html">Schulprofil</a></li>
+      <li><a href="/asz-riesa/schulinfos.html">Schulinfos</a></li>
+      <li><a href="/asz-riesa/mitwirkung.html">Mitwirkung</a></li>
+      <li><a href="/asz-riesa/foerderverein.html">Förderverein</a></li>
+      <li><a href="/asz-riesa/kontakt.html">Kontakt</a></li>
+    </ul>
+    <button class="nav-menu-btn" onclick="toggleNav()" aria-label="Menü"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="/asz-riesa/start.html">Start</a><a href="/asz-riesa/termine.html">Termine</a><a href="/asz-riesa/bilder.html">Bilder</a><a href="/asz-riesa/schulprofil.html">Schulprofil</a><a href="/asz-riesa/schulinfos.html">Schulinfos</a><a href="/asz-riesa/mitwirkung.html">Mitwirkung</a><a href="/asz-riesa/foerderverein.html">Förderverein</a><a href="/asz-riesa/kontakt.html">Kontakt</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-eyebrow">Galerie</div>
+    <h1>Bildergalerie</h1>
+    <p>Echte Eindrücke aus unserem Schulalltag — von Projekten, Sport, Festen und besonderen Momenten.</p>
+  </div>
+</div>
+
+<section class="section reveal">
+  <div class="section-label">Fotos</div>
+  <div class="section-title">Schulalltag in Bildern</div>
+
+  <div class="album-tabs">
+    <div class="album-tab active" onclick="showAlbum('alle', this)">Alle</div>
+    <div class="album-tab" onclick="showAlbum('2025', this)">2025/26</div>
+    <div class="album-tab" onclick="showAlbum('2024', this)">2024/25</div>
+    <div class="album-tab" onclick="showAlbum('archiv', this)">Ältere Bilder</div>
+  </div>
+
+  <!-- ALLE -->
+  <div class="album-section active" id="album-alle">
+    <div class="album-year-label">Schuljahr 2025/26</div>
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/benutzer/1123/Downloads/25-Start.jpg" alt="Schulgebäude">
+        <div class="gallery-caption">Unser Schulgebäude<span class="gallery-tag">Schule</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/benutzer/1123/2025-26/25-disco__20_.JPG" alt="Schuldisco">
+        <div class="gallery-caption">Schuldisco<span class="gallery-tag">Schulleben</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/benutzer/1123/2025-26/25-Weih-Aula__44_.jpg" alt="Weihnachtsfeier Aula">
+        <div class="gallery-caption">Weihnachtsfeier in der Aula<span class="gallery-tag">Feste</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/benutzer/1123/2025-26/Weihnacht/25-Weihnachten__88_.jpg" alt="Weihnachten">
+        <div class="gallery-caption">Weihnachtszeit<span class="gallery-tag">Feste</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/benutzer/1123/2025-26/25-SPO-Fest__3_.jpg" alt="Sportfest">
+        <div class="gallery-caption">Sportfest<span class="gallery-tag">Sport</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/benutzer/1123/2025-26/25-ADAC__6_.JPG" alt="ADAC Projekt">
+        <div class="gallery-caption">ADAC Projekt<span class="gallery-tag">Projekt</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/benutzer/1123/2025-26/25-BWP__12_.JPG" alt="Berufsweltparcours">
+        <div class="gallery-caption">Berufsweltparcours<span class="gallery-tag">Berufsorientierung</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/benutzer/1123/2025-26/25-hallo__11_.JPG" alt="Schulalltag">
+        <div class="gallery-caption">Schulalltag<span class="gallery-tag">Schulleben</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/benutzer/1123/2025-26/25-komm__17_.jpg" alt="Kommunikation im Unterricht">
+        <div class="gallery-caption">Unterricht &amp; Kommunikation<span class="gallery-tag">Unterricht</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/benutzer/1123/2025-26/25-SPOiK__7_.jpg" alt="Sport inklusiv">
+        <div class="gallery-caption">Sport &amp; Inklusion<span class="gallery-tag">Sport</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/benutzer/1123/2025-26/25-Superfly__2_.jpg" alt="Superfly Projekt">
+        <div class="gallery-caption">Superfly Projekt<span class="gallery-tag">Projekt</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/benutzer/1123/2025-26/25-vorlesen__2_.jpg" alt="Vorleseprojekt">
+        <div class="gallery-caption">Vorlese-Projekt<span class="gallery-tag">Lesen</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/benutzer/1123/2025-26/25-Pr%C3%A4v-Hund__2_.jpg" alt="Präventionshund">
+        <div class="gallery-caption">Präventionsprojekt<span class="gallery-tag">Prävention</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/benutzer/1123/2025-26/26-big_Challenge__6_.jpg" alt="Big Challenge">
+        <div class="gallery-caption">Big Challenge Wettbewerb<span class="gallery-tag">Wettbewerb</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/benutzer/1123/2025-26/26-cross__1_.jpg" alt="Crosslauf">
+        <div class="gallery-caption">Crosslauf<span class="gallery-tag">Sport</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/benutzer/1123/2025-26/25-H%C3%B6lzener__29_.jpg" alt="Veranstaltung">
+        <div class="gallery-caption">Schulveranstaltung<span class="gallery-tag">Schulleben</span></div>
+      </div>
+    </div>
+
+    <div class="album-year-label">Schuljahr 2024/25</div>
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/benutzer/1123/2024-25/25-spo__55_.JPG" alt="Sport 2024/25">
+        <div class="gallery-caption">Sport 2024/25<span class="gallery-tag">Sport</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/benutzer/1123/2024-25/25-ab/25-Stern__16_.JPG" alt="Abschluss Stern">
+        <div class="gallery-caption">Abschlussfeier<span class="gallery-tag">Abschluss</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/benutzer/1123/Downloads/25_Sch-Rat__1_.jpg" alt="Schülerrat">
+        <div class="gallery-caption">Schülerrat<span class="gallery-tag">Mitwirkung</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/benutzer/1123/Downloads/25_Sch-Rat__2_.jpg" alt="Schülerrat 2">
+        <div class="gallery-caption">Schülerrat<span class="gallery-tag">Mitwirkung</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/benutzer/1123/Downloads/25_Sch-Rat__3_.jpg" alt="Schülerrat 3">
+        <div class="gallery-caption">Schülerrat<span class="gallery-tag">Mitwirkung</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/benutzer/1123/Downloads/24-Streit.jpg" alt="Projekt 2024">
+        <div class="gallery-caption">Schulprojekt 2024<span class="gallery-tag">Projekt</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/benutzer/1123/Downloads/20251027_174849.jpg" alt="Veranstaltung Oktober 2025">
+        <div class="gallery-caption">Schulveranstaltung<span class="gallery-tag">Schulleben</span></div>
+      </div>
+    </div>
+
+    <div class="album-year-label">Ältere Aufnahmen</div>
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/gruppen/408/alltagoben.jpg" alt="Schulalltag">
+        <div class="gallery-caption">Schulalltag<span class="gallery-tag">Schulleben</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/gruppen/408/GTA-oben.jpg" alt="Ganztagsangebote">
+        <div class="gallery-caption">Ganztagsangebote<span class="gallery-tag">GTA</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/gruppen/408/unterrichtoben.jpg" alt="Unterricht">
+        <div class="gallery-caption">Unterricht<span class="gallery-tag">Lernen</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/gruppen/408/sportrekord-oben.jpg" alt="Sportrekord">
+        <div class="gallery-caption">Sportrekord<span class="gallery-tag">Sport</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/gruppen/408/faecheroben.jpg" alt="Fächerangebote">
+        <div class="gallery-caption">Fächerangebote<span class="gallery-tag">Unterricht</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/gruppen/408/stadt-oben.jpg" alt="Stadtprojekt">
+        <div class="gallery-caption">Stadtprojekt Riesa<span class="gallery-tag">Projekt</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/gruppen/408/DSCF0070.jpg" alt="Schulbild">
+        <div class="gallery-caption">Schulbild<span class="gallery-tag">Archiv</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/benutzer/1123/2017-18/18-skulp__37_.jpg" alt="Skulpturenproject 2018">
+        <div class="gallery-caption">Skulpturenprojekt 2018<span class="gallery-tag">Kunst</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/benutzer/1123/2016-17/lese-pkt.jpg" alt="Leseprojekt 2017">
+        <div class="gallery-caption">Leseprojekt 2017<span class="gallery-tag">Lesen</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="../fileadmin/_special/benutzer/1123/2015-16/solar.jpg" alt="Solarprojekt 2016">
+        <div class="gallery-caption">Solarprojekt 2016<span class="gallery-tag">Projekt</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NUR 2025/26 -->
+  <div class="album-section" id="album-2025">
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/benutzer/1123/Downloads/25-Start.jpg" alt="Schulgebäude"><div class="gallery-caption">Unser Schulgebäude<span class="gallery-tag">Schule</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/benutzer/1123/2025-26/25-disco__20_.JPG" alt="Schuldisco"><div class="gallery-caption">Schuldisco<span class="gallery-tag">Schulleben</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/benutzer/1123/2025-26/25-Weih-Aula__44_.jpg" alt="Weihnachtsfeier Aula"><div class="gallery-caption">Weihnachtsfeier in der Aula<span class="gallery-tag">Feste</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/benutzer/1123/2025-26/Weihnacht/25-Weihnachten__88_.jpg" alt="Weihnachten"><div class="gallery-caption">Weihnachtszeit<span class="gallery-tag">Feste</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/benutzer/1123/2025-26/25-SPO-Fest__3_.jpg" alt="Sportfest"><div class="gallery-caption">Sportfest<span class="gallery-tag">Sport</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/benutzer/1123/2025-26/25-ADAC__6_.JPG" alt="ADAC Projekt"><div class="gallery-caption">ADAC Projekt<span class="gallery-tag">Projekt</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/benutzer/1123/2025-26/25-BWP__12_.JPG" alt="Berufsweltparcours"><div class="gallery-caption">Berufsweltparcours<span class="gallery-tag">Berufsorientierung</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/benutzer/1123/2025-26/25-hallo__11_.JPG" alt="Schulalltag"><div class="gallery-caption">Schulalltag<span class="gallery-tag">Schulleben</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/benutzer/1123/2025-26/25-komm__17_.jpg" alt="Unterricht"><div class="gallery-caption">Unterricht &amp; Kommunikation<span class="gallery-tag">Unterricht</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/benutzer/1123/2025-26/25-SPOiK__7_.jpg" alt="Sport inklusiv"><div class="gallery-caption">Sport &amp; Inklusion<span class="gallery-tag">Sport</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/benutzer/1123/2025-26/25-Superfly__2_.jpg" alt="Superfly"><div class="gallery-caption">Superfly Projekt<span class="gallery-tag">Projekt</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/benutzer/1123/2025-26/25-vorlesen__2_.jpg" alt="Vorlesen"><div class="gallery-caption">Vorlese-Projekt<span class="gallery-tag">Lesen</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/benutzer/1123/2025-26/25-Pr%C3%A4v-Hund__2_.jpg" alt="Prävention"><div class="gallery-caption">Präventionsprojekt<span class="gallery-tag">Prävention</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/benutzer/1123/2025-26/26-big_Challenge__6_.jpg" alt="Big Challenge"><div class="gallery-caption">Big Challenge<span class="gallery-tag">Wettbewerb</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/benutzer/1123/2025-26/26-cross__1_.jpg" alt="Crosslauf"><div class="gallery-caption">Crosslauf<span class="gallery-tag">Sport</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/benutzer/1123/2025-26/25-H%C3%B6lzener__29_.jpg" alt="Veranstaltung"><div class="gallery-caption">Schulveranstaltung<span class="gallery-tag">Schulleben</span></div></div>
+    </div>
+  </div>
+
+  <!-- NUR 2024/25 -->
+  <div class="album-section" id="album-2024">
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/benutzer/1123/2024-25/25-spo__55_.JPG" alt="Sport"><div class="gallery-caption">Sport 2024/25<span class="gallery-tag">Sport</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/benutzer/1123/2024-25/25-ab/25-Stern__16_.JPG" alt="Abschluss"><div class="gallery-caption">Abschlussfeier<span class="gallery-tag">Abschluss</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/benutzer/1123/Downloads/25_Sch-Rat__1_.jpg" alt="Schülerrat"><div class="gallery-caption">Schülerrat<span class="gallery-tag">Mitwirkung</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/benutzer/1123/Downloads/25_Sch-Rat__2_.jpg" alt="Schülerrat 2"><div class="gallery-caption">Schülerrat<span class="gallery-tag">Mitwirkung</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/benutzer/1123/Downloads/25_Sch-Rat__3_.jpg" alt="Schülerrat 3"><div class="gallery-caption">Schülerrat<span class="gallery-tag">Mitwirkung</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/benutzer/1123/Downloads/24-Streit.jpg" alt="Projekt 2024"><div class="gallery-caption">Schulprojekt 2024<span class="gallery-tag">Projekt</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/benutzer/1123/Downloads/20251027_174849.jpg" alt="Oktober 2025"><div class="gallery-caption">Schulveranstaltung<span class="gallery-tag">Schulleben</span></div></div>
+    </div>
+  </div>
+
+  <!-- ARCHIV -->
+  <div class="album-section" id="album-archiv">
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/gruppen/408/alltagoben.jpg" alt="Schulalltag"><div class="gallery-caption">Schulalltag<span class="gallery-tag">Schulleben</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/gruppen/408/GTA-oben.jpg" alt="GTA"><div class="gallery-caption">Ganztagsangebote<span class="gallery-tag">GTA</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/gruppen/408/unterrichtoben.jpg" alt="Unterricht"><div class="gallery-caption">Unterricht<span class="gallery-tag">Lernen</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/gruppen/408/sportrekord-oben.jpg" alt="Sportrekord"><div class="gallery-caption">Sportrekord<span class="gallery-tag">Sport</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/gruppen/408/faecheroben.jpg" alt="Fächer"><div class="gallery-caption">Fächerangebote<span class="gallery-tag">Unterricht</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/gruppen/408/stadt-oben.jpg" alt="Stadt"><div class="gallery-caption">Stadtprojekt Riesa<span class="gallery-tag">Projekt</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/gruppen/408/DSCF0070.jpg" alt="Schulbild"><div class="gallery-caption">Schulbild<span class="gallery-tag">Archiv</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/benutzer/1123/2017-18/18-skulp__37_.jpg" alt="Skulpturen 2018"><div class="gallery-caption">Skulpturenprojekt 2018<span class="gallery-tag">Kunst</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/benutzer/1123/2016-17/lese-pkt.jpg" alt="Lesen 2017"><div class="gallery-caption">Leseprojekt 2017<span class="gallery-tag">Lesen</span></div></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="../fileadmin/_special/benutzer/1123/2015-16/solar.jpg" alt="Solar 2016"><div class="gallery-caption">Solarprojekt 2016<span class="gallery-tag">Projekt</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section reveal">
+  <div class="info-box">
+    <h3>Bildrechte &amp; Datenschutz</h3>
+    <p>Alle auf dieser Seite veröffentlichten Bilder wurden mit Einwilligung der abgebildeten Personen veröffentlicht. Haben Sie Fragen zur Veröffentlichung von Fotos, wenden Sie sich bitte an das Schulsekretariat. Weitere Informationen in unserer <a href="/asz-riesa/datenschutz.html" style="color:var(--accent);font-weight:500;">Datenschutzerklärung</a>.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/asz-riesa/start.html" class="nav-logo">
+        <div style="width:40px;height:40px;background:rgba(255,255,255,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:2px;"><img src="../fileadmin/_processed_/2/9/csm_Logo-MamSZ_24bc79436c.jpg" alt="ASZ Logo" style="width:36px;height:34px;object-fit:contain;border-radius:6px;"></div>
+        <div class="nav-logo-text" style="color:#fff;">Oberschule Am Sportzentrum<span style="color:rgba(255,255,255,0.5);">Riesa · Sachsen</span></div>
+      </a>
+      <p>Eine staatliche Oberschule in Riesa, gefördert durch den Sächsischen Bildungsserver und das Startchancen-Programm.</p>
+    </div>
+    <div class="footer-col"><h4>Schule</h4><ul><li><a href="/asz-riesa/schulprofil.html">Schulprofil</a></li><li><a href="/asz-riesa/schulinfos.html">Schulinfos</a></li><li><a href="/asz-riesa/termine.html">Termine</a></li><li><a href="/asz-riesa/bilder.html">Bilder</a></li><li><a href="/asz-riesa/archiv.html">Archiv</a></li></ul></div>
+    <div class="footer-col"><h4>Gemeinschaft</h4><ul><li><a href="/asz-riesa/mitwirkung.html">Mitwirkung</a></li><li><a href="/asz-riesa/foerderverein.html">Förderverein</a></li><li><a href="/asz-riesa/kontakt.html">Kontakt</a></li></ul></div>
+    <div class="footer-col"><h4>Rechtliches</h4><ul><li><a href="/asz-riesa/impressum.html">Impressum</a></li><li><a href="/asz-riesa/datenschutz.html">Datenschutz</a></li><li><a href="/asz-riesa/barrierefreiheit.html">Barrierefreiheit</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div class="footer-bottom-inner"><span>© 2025 Oberschule Am Sportzentrum Riesa</span><span>Bereitgestellt mit Unterstützung des <a href="https://www.sachsen.schule" target="_blank" rel="noreferrer">Sächsischen Bildungsservers</a></span></div></div>
+</footer>
+
+<script>
+  function toggleNav(){document.getElementById('mobileNav').classList.toggle('open');}
+
+  function showAlbum(id, tab) {
+    document.querySelectorAll('.album-section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.album-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('album-' + id).classList.add('active');
+    tab.classList.add('active');
+  }
+
+  function openLightbox(item) {
+    const img = item.querySelector('img');
+    const cap = item.querySelector('.gallery-caption');
+    document.getElementById('lightboxImg').src = img.src;
+    document.getElementById('lightboxImg').alt = img.alt;
+    document.getElementById('lightboxCaption').textContent = img.alt;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((e) => {
+    e.forEach((el,i) => { if(el.isIntersecting){ setTimeout(() => el.target.classList.add('visible'), i*80); obs.unobserve(el.target); }});
+  }, {threshold:0.08});
+  reveals.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

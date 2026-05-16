@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Termine – Oberschule Am Sportzentrum Riesa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#fdf6f0;--bg2:#f5ece3;--ink:#1a1208;--ink2:#5a4a38;--accent:#c0390a;--accent2:#e05a1a;--accent3:#fdd5b8;--warm:#e07a2a;--card:#ffffff;--border:#e8d8c8;--radius:16px;--radius-sm:8px;--shadow:0 4px 24px rgba(192,57,10,0.10);--shadow-hover:0 8px 40px rgba(192,57,10,0.18);}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.65;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:0.5;}
+  nav{position:sticky;top:0;z-index:100;background:rgba(253,246,240,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 clamp(1rem,4vw,3rem);}
+  .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;height:68px;gap:2rem;}
+  .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;}
+  .nav-logo-badge{width:40px;height:40px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Syne',sans-serif;font-weight:800;font-size:15px;flex-shrink:0;}
+  .nav-logo-text{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;line-height:1.2;color:var(--ink);}
+  .nav-logo-text span{display:block;font-size:11px;font-weight:400;color:var(--ink2);font-family:'DM Sans',sans-serif;}
+  .nav-links{display:flex;list-style:none;gap:0.15rem;margin-left:auto;flex-wrap:wrap;}
+  .nav-links a{display:block;padding:6px 13px;color:var(--ink2);text-decoration:none;font-size:14px;font-weight:400;border-radius:var(--radius-sm);transition:all 0.2s;white-space:nowrap;}
+  .nav-links a:hover{background:var(--accent3);color:var(--accent);}
+  .nav-links a.active{background:var(--accent);color:#fff;}
+  .nav-menu-btn{display:none;background:none;border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:8px 10px;cursor:pointer;margin-left:auto;flex-direction:column;gap:5px;}
+  .nav-menu-btn span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;}
+  .mobile-nav{display:none;position:fixed;top:68px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border);padding:1rem clamp(1rem,4vw,3rem);z-index:99;flex-direction:column;gap:4px;box-shadow:0 8px 32px rgba(0,0,0,0.1);}
+  .mobile-nav.open{display:flex;}
+  .mobile-nav a{padding:10px 14px;color:var(--ink);text-decoration:none;font-size:15px;border-radius:var(--radius-sm);transition:all 0.18s;}
+  .mobile-nav a:hover{background:var(--accent3);color:var(--accent);}
+  .page-hero{background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);color:#fff;padding:clamp(2.5rem,6vw,4.5rem) clamp(1rem,4vw,3rem);}
+  .page-hero-inner{max-width:1200px;margin:0 auto;}
+  .page-hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);color:#fff;font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:5px 14px;border-radius:999px;margin-bottom:1rem;}
+  .page-hero h1{font-family:'Syne',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:800;line-height:1.08;letter-spacing:-0.03em;margin-bottom:0.75rem;}
+  .page-hero p{opacity:0.82;font-size:1.05rem;font-weight:300;max-width:540px;}
+  .section{max-width:1200px;margin:0 auto;padding:3rem clamp(1rem,4vw,3rem);}
+  .section-label{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent2);margin-bottom:0.5rem;}
+  .section-title{font-family:'Syne',sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;letter-spacing:-0.02em;line-height:1.15;margin-bottom:2rem;}
+  .divider{height:1px;background:var(--border);margin:0 clamp(1rem,4vw,3rem);}
+  .termine-list{display:flex;flex-direction:column;gap:1rem;}
+  .termin-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.5rem;display:flex;align-items:flex-start;gap:1.25rem;transition:all 0.22s;}
+  .termin-item:hover{transform:translateX(4px);box-shadow:var(--shadow);border-color:var(--accent3);}
+  .termin-date{background:var(--accent);color:#fff;border-radius:10px;padding:10px 14px;text-align:center;min-width:62px;flex-shrink:0;}
+  .termin-date strong{display:block;font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;line-height:1;}
+  .termin-date small{font-size:11px;opacity:0.85;text-transform:uppercase;}
+  .termin-content h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:4px;}
+  .termin-content p{font-size:0.875rem;color:var(--ink2);font-weight:300;}
+  .termin-tag{display:inline-block;background:var(--accent3);color:var(--accent);font-size:11px;font-weight:500;padding:2px 10px;border-radius:999px;margin-top:6px;}
+  .info-box{background:var(--bg2);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:var(--radius);padding:1.5rem 1.75rem;}
+  .info-box h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:0.5rem;color:var(--accent);}
+  .info-box p{font-size:0.875rem;color:var(--ink2);font-weight:300;line-height:1.6;}
+  footer{background:var(--ink);color:rgba(255,255,255,0.6);margin-top:5rem;}
+  .footer-inner{max-width:1200px;margin:0 auto;padding:3rem clamp(1rem,4vw,3rem) 2rem;display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:2.5rem;}
+  .footer-col h4{font-family:'Syne',sans-serif;font-weight:600;font-size:0.85rem;color:#fff;letter-spacing:0.04em;margin-bottom:1rem;text-transform:uppercase;}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .footer-col ul a{font-size:0.85rem;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s;}
+  .footer-col ul a:hover{color:rgba(255,255,255,0.85);}
+  .footer-brand p{margin-top:1rem;font-size:0.85rem;line-height:1.7;color:rgba(255,255,255,0.45);}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding:1.25rem clamp(1rem,4vw,3rem);}
+  .footer-bottom-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:12px;color:rgba(255,255,255,0.3);}
+  .footer-bottom-inner a{color:rgba(255,255,255,0.4);text-decoration:none;}
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.55s ease,transform 0.55s ease;}
+  .reveal.visible{opacity:1;transform:none;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+  @media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr;}.nav-links{display:none;}.nav-menu-btn{display:flex;}}
+  @media(max-width:600px){.footer-inner{grid-template-columns:1fr;}.termin-item{flex-direction:column;gap:0.75rem;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/asz-riesa/start.html" class="nav-logo">
+      <div class="nav-logo-badge" style="background:transparent;padding:2px;">
+        <img src="../fileadmin/_processed_/2/9/csm_Logo-MamSZ_24bc79436c.jpg" alt="ASZ Logo" style="width:36px;height:34px;object-fit:contain;border-radius:6px;">
+      </div>
+      <div class="nav-logo-text">Oberschule Am Sportzentrum<span>Riesa · Sachsen</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/asz-riesa/start.html">Start</a></li>
+      <li><a href="/asz-riesa/termine.html" class="active">Termine</a></li>
+      <li><a href="/asz-riesa/bilder.html">Bilder</a></li>
+      <li><a href="/asz-riesa/schulprofil.html">Schulprofil</a></li>
+      <li><a href="/asz-riesa/schulinfos.html">Schulinfos</a></li>
+      <li><a href="/asz-riesa/mitwirkung.html">Mitwirkung</a></li>
+      <li><a href="/asz-riesa/foerderverein.html">Förderverein</a></li>
+      <li><a href="/asz-riesa/kontakt.html">Kontakt</a></li>
+    </ul>
+    <button class="nav-menu-btn" onclick="toggleNav()" aria-label="Menü"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="/asz-riesa/start.html">Start</a><a href="/asz-riesa/termine.html">Termine</a><a href="/asz-riesa/bilder.html">Bilder</a><a href="/asz-riesa/schulprofil.html">Schulprofil</a><a href="/asz-riesa/schulinfos.html">Schulinfos</a><a href="/asz-riesa/mitwirkung.html">Mitwirkung</a><a href="/asz-riesa/foerderverein.html">Förderverein</a><a href="/asz-riesa/kontakt.html">Kontakt</a><a href="/asz-riesa/impressum.html">Impressum</a><a href="/asz-riesa/datenschutz.html">Datenschutz</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-eyebrow">Übersicht</div>
+    <h1>Termine &amp; Veranstaltungen</h1>
+    <p>Aktuelle Schultermine, Feiertage, Elternabende und besondere Veranstaltungen auf einen Blick.</p>
+  </div>
+</div>
+
+<section class="section reveal">
+  <div class="section-label">Schuljahr 2024/25</div>
+  <div class="section-title">Kommende Termine</div>
+  <div class="termine-list">
+    <div class="termin-item">
+      <div class="termin-date"><strong>15</strong><small>Jan</small></div>
+      <div class="termin-content">
+        <h3>Elternabend Klasse 5 &amp; 6</h3>
+        <p>Informationsabend für Eltern der Klassenstufen 5 und 6 — Beginn 18:00 Uhr in der Aula.</p>
+        <span class="termin-tag">Elternabend</span>
+      </div>
+    </div>
+    <div class="termin-item">
+      <div class="termin-date"><strong>20</strong><small>Jan</small></div>
+      <div class="termin-content">
+        <h3>Winterferien beginnen</h3>
+        <p>Die Winterferien dauern vom 20.01. bis 31.01.2025. Erster Schultag danach: 03.02.2025.</p>
+        <span class="termin-tag">Ferien</span>
+      </div>
+    </div>
+    <div class="termin-item">
+      <div class="termin-date"><strong>14</strong><small>Feb</small></div>
+      <div class="termin-content">
+        <h3>Projekttag „Demokratie &amp; Miteinander"</h3>
+        <p>Schulweiter Projekttag mit verschiedenen Arbeitsgruppen zu gesellschaftlichen Themen.</p>
+        <span class="termin-tag">Schulleben</span>
+      </div>
+    </div>
+    <div class="termin-item">
+      <div class="termin-date"><strong>07</strong><small>Mrz</small></div>
+      <div class="termin-content">
+        <h3>Elternratssitzung</h3>
+        <p>Reguläre Sitzung des Elternrates um 18:30 Uhr im Lehrerzimmer.</p>
+        <span class="termin-tag">Mitwirkung</span>
+      </div>
+    </div>
+    <div class="termin-item">
+      <div class="termin-date"><strong>17</strong><small>Mrz</small></div>
+      <div class="termin-content">
+        <h3>Osterferien beginnen</h3>
+        <p>Osterferien vom 17.03. bis 25.04.2025. Unterrichtsbeginn nach den Ferien: 28.04.2025.</p>
+        <span class="termin-tag">Ferien</span>
+      </div>
+    </div>
+    <div class="termin-item">
+      <div class="termin-date"><strong>05</strong><small>Mai</small></div>
+      <div class="termin-content">
+        <h3>Tag der offenen Tür</h3>
+        <p>Interessierte Schülerinnen, Schüler und Eltern sind herzlich eingeladen, unsere Schule kennenzulernen. 10:00–14:00 Uhr.</p>
+        <span class="termin-tag">Besonders</span>
+      </div>
+    </div>
+    <div class="termin-item">
+      <div class="termin-date"><strong>20</strong><small>Jun</small></div>
+      <div class="termin-content">
+        <h3>Schulfest</h3>
+        <p>Das alljährliche Schulfest mit Aufführungen, Sport, Spiel und gemeinsamem Miteinander.</p>
+        <span class="termin-tag">Schulleben</span>
+      </div>
+    </div>
+    <div class="termin-item">
+      <div class="termin-date"><strong>04</strong><small>Jul</small></div>
+      <div class="termin-content">
+        <h3>Sommerferien beginnen</h3>
+        <p>Letzter Unterrichtstag: 03.07.2025. Sommerferien bis 13.08.2025.</p>
+        <span class="termin-tag">Ferien</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section reveal">
+  <div class="info-box">
+    <h3>Hinweis zu Terminen</h3>
+    <p>Alle Termine sind ohne Gewähr und können sich kurzfristig ändern. Bitte achten Sie auf Informationsschreiben der Schule und Mitteilungen über das Klassenbuch. Bei Fragen wenden Sie sich an das Schulsekretariat.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/asz-riesa/start.html" class="nav-logo">
+        <div class="nav-logo-badge" style="background:rgba(255,255,255,0.12);padding:2px;"><img src="../fileadmin/_processed_/2/9/csm_Logo-MamSZ_24bc79436c.jpg" alt="ASZ Logo" style="width:36px;height:34px;object-fit:contain;border-radius:6px;"></div>
+        <div class="nav-logo-text" style="color:#fff;">Oberschule Am Sportzentrum<span style="color:rgba(255,255,255,0.5);">Riesa · Sachsen</span></div>
+      </a>
+      <p>Eine staatliche Oberschule in Riesa, gefördert durch den Sächsischen Bildungsserver und das Startchancen-Programm.</p>
+    </div>
+    <div class="footer-col"><h4>Schule</h4><ul><li><a href="/asz-riesa/schulprofil.html">Schulprofil</a></li><li><a href="/asz-riesa/schulinfos.html">Schulinfos</a></li><li><a href="/asz-riesa/termine.html">Termine</a></li><li><a href="/asz-riesa/bilder.html">Bilder</a></li><li><a href="/asz-riesa/archiv.html">Archiv</a></li></ul></div>
+    <div class="footer-col"><h4>Gemeinschaft</h4><ul><li><a href="/asz-riesa/mitwirkung.html">Mitwirkung</a></li><li><a href="/asz-riesa/foerderverein.html">Förderverein</a></li><li><a href="/asz-riesa/kontakt.html">Kontakt</a></li></ul></div>
+    <div class="footer-col"><h4>Rechtliches</h4><ul><li><a href="/asz-riesa/impressum.html">Impressum</a></li><li><a href="/asz-riesa/datenschutz.html">Datenschutz</a></li><li><a href="/asz-riesa/barrierefreiheit.html">Barrierefreiheit</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div class="footer-bottom-inner"><span>© 2025 Oberschule Am Sportzentrum Riesa</span><span>Bereitgestellt mit Unterstützung des <a href="https://www.sachsen.schule" target="_blank" rel="noreferrer">Sächsischen Bildungsservers</a></span></div></div>
+</footer>
+<script>
+  function toggleNav(){document.getElementById('mobileNav').classList.toggle('open');}
+  const reveals=document.querySelectorAll('.reveal');
+  const obs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);obs.unobserve(e.target);}});},{threshold:0.08});
+  reveals.forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

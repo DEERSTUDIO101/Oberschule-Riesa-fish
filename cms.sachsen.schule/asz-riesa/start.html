@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oberschule Am Sportzentrum Riesa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fdf6f0;
+    --bg2: #f5ece3;
+    --ink: #1a1208;
+    --ink2: #5a4a38;
+    --accent: #c0390a;
+    --accent2: #e05a1a;
+    --accent3: #fdd5b8;
+    --warm: #e07a2a;
+    --card: #ffffff;
+    --border: #e8d8c8;
+    --radius: 16px;
+    --radius-sm: 8px;
+    --shadow: 0 4px 24px rgba(192,57,10,0.10);
+    --shadow-hover: 0 8px 40px rgba(192,57,10,0.18);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.5;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(253,246,240,0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 clamp(1rem,4vw,3rem);
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    height: 68px;
+    gap: 2rem;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .nav-logo-badge {
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: -0.5px;
+    flex-shrink: 0;
+  }
+
+  .nav-logo-text {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+  .nav-logo-text span {
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--ink2);
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 0.15rem;
+    margin-left: auto;
+    flex-wrap: wrap;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 6px 13px;
+    color: var(--ink2);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .nav-links a:hover {
+    background: var(--accent3);
+    color: var(--accent);
+  }
+
+  .nav-links a.active {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .nav-menu-btn {
+    display: none;
+    background: none;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 8px 10px;
+    cursor: pointer;
+    margin-left: auto;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .nav-menu-btn span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--ink);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(2rem,6vw,5rem) clamp(1rem,4vw,3rem) clamp(1.5rem,4vw,3rem);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    min-height: 540px;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent3);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 1.2rem;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    background: var(--accent2);
+    border-radius: 50%;
+  }
+
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.2rem;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--accent2);
+  }
+
+  .hero-desc {
+    color: var(--ink2);
+    font-size: 1.05rem;
+    max-width: 440px;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.22s;
+    cursor: pointer;
+    border: none;
+    white-space: nowrap;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 2px 12px rgba(192,57,10,0.25);
+  }
+  .btn-primary:hover {
+    background: var(--accent2);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(192,57,10,0.35);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--ink);
+    border: 1.5px solid var(--border);
+  }
+  .btn-outline:hover {
+    background: var(--bg2);
+    border-color: var(--accent3);
+    transform: translateY(-2px);
+  }
+
+  .hero-visual {
+    position: relative;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .hero-img-wrap {
+    border-radius: 24px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    background: var(--accent3);
+    position: relative;
+  }
+
+  .hero-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Placeholder if img not found */
+  .hero-img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--accent3) 0%, #f5c090 100%);
+    color: var(--accent);
+  }
+
+  .hero-img-placeholder svg {
+    width: 80px;
+    height: 80px;
+    opacity: 0.4;
+  }
+
+  .hero-stat-strip {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.2rem;
+  }
+
+  .hero-stat {
+    flex: 1;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    text-align: center;
+  }
+
+  .hero-stat strong {
+    display: block;
+    font-family: 'Syne', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 3px;
+  }
+
+  .hero-stat small {
+    font-size: 11px;
+    color: var(--ink2);
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem clamp(1rem,4vw,3rem);
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 2rem;
+  }
+
+  /* ── INFO BANNER ── */
+  .info-banner {
+    background: var(--accent);
+    color: #fff;
+    padding: 20px clamp(1rem,4vw,3rem);
+  }
+
+  .info-banner-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .info-banner-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .info-banner p { font-size: 15px; opacity: 0.95; line-height: 1.5; }
+  .info-banner a { color: #fff; font-weight: 500; }
+  .info-banner strong { font-weight: 600; }
+
+  /* ── CARDS ── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    transition: all 0.25s;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent3);
+  }
+
+  .card-icon {
+    width: 46px;
+    height: 46px;
+    background: var(--accent3);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+    color: var(--ink2);
+    font-weight: 300;
+    flex: 1;
+  }
+
+  .card-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--accent2);
+    font-weight: 500;
+    margin-top: auto;
+  }
+
+  /* ── PROGRAM BLOCK ── */
+  .program-block {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .program-content { padding: 2.5rem; }
+  .program-content h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+
+  .program-content p {
+    color: var(--ink2);
+    font-weight: 300;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .program-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 1.25rem;
+  }
+
+  .program-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--ink2);
+  }
+
+  .program-list li::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    background: var(--accent3);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 2px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18' fill='none'%3E%3Cpath d='M4 9l3.5 3.5L14 6' stroke='%23c0390a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+
+  .program-visual {
+    background: linear-gradient(135deg, var(--accent3) 0%, #f5b080 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .program-badge {
+    background: var(--accent);
+    color: #fff;
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    max-width: 220px;
+  }
+
+  .program-badge h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  .program-badge p {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    font-weight: 300;
+  }
+
+  /* ── NOTICE ── */
+  .notice {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.75rem;
+  }
+
+  .notice h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+  }
+
+  .notice p {
+    font-size: 0.875rem;
+    color: var(--ink2);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 0 clamp(1rem,4vw,3rem);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.6);
+    margin-top: 5rem;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem clamp(1rem,4vw,3rem) 2rem;
+    display: grid;
+    grid-template-columns: 1.5fr repeat(3,1fr);
+    gap: 2.5rem;
+  }
+
+  .footer-brand .nav-logo-badge {
+    background: rgba(255,255,255,0.12);
+  }
+
+  .footer-brand .nav-logo-text {
+    color: #fff;
+  }
+
+  .footer-brand .nav-logo-text span {
+    color: rgba(255,255,255,0.5);
+  }
+
+  .footer-brand p {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.45);
+  }
+
+  .footer-col h4 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #fff;
+    letter-spacing: 0.04em;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .footer-col ul a {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-col ul a:hover {
+    color: rgba(255,255,255,0.85);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 1.25rem clamp(1rem,4vw,3rem);
+  }
+
+  .footer-bottom-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .footer-bottom-inner a {
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+  }
+  .footer-bottom-inner a:hover { color: rgba(255,255,255,0.7); }
+
+  /* ── MOBILE NAV ── */
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem clamp(1rem,4vw,3rem);
+    z-index: 99;
+    flex-direction: column;
+    gap: 4px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  }
+
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a {
+    padding: 10px 14px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 15px;
+    border-radius: var(--radius-sm);
+    transition: all 0.18s;
+  }
+  .mobile-nav a:hover {
+    background: var(--accent3);
+    color: var(--accent);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+    .hero-visual { order: -1; }
+    .program-block { grid-template-columns: 1fr; }
+    .program-visual { display: none; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+    .nav-menu-btn { display: flex; }
+  }
+
+  @media (max-width: 600px) {
+    .footer-inner { grid-template-columns: 1fr; }
+    .hero-stat-strip { gap: 0.5rem; }
+    .hero-stat strong { font-size: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/asz-riesa/index.html" class="nav-logo">
+      <div class="nav-logo-badge" style="background:transparent;padding:2px;">
+        <img src="../fileadmin/_processed_/2/9/csm_Logo-MamSZ_24bc79436c.jpg" alt="ASZ Logo" style="width:36px;height:34px;object-fit:contain;border-radius:6px;">
+      </div>
+      <div class="nav-logo-text">
+        Oberschule Am Sportzentrum
+        <span>Riesa · Sachsen</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/asz-riesa/start.html" class="active">Start</a></li>
+      <li><a href="/asz-riesa/termine.html">Termine</a></li>
+      <li><a href="/asz-riesa/bilder.html">Bilder</a></li>
+      <li><a href="/asz-riesa/schulprofil.html">Schulprofil</a></li>
+      <li><a href="/asz-riesa/schulinfos.html">Schulinfos</a></li>
+      <li><a href="/asz-riesa/mitwirkung.html">Mitwirkung</a></li>
+      <li><a href="/asz-riesa/foerderverein.html">Förderverein</a></li>
+      <li><a href="/asz-riesa/kontakt.html">Kontakt</a></li>
+    </ul>
+    <button class="nav-menu-btn" onclick="toggleNav()" aria-label="Menü">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="/asz-riesa/start.html">Start</a>
+  <a href="/asz-riesa/termine.html">Termine</a>
+  <a href="/asz-riesa/bilder.html">Bilder</a>
+  <a href="/asz-riesa/schulprofil.html">Schulprofil</a>
+  <a href="/asz-riesa/schulinfos.html">Schulinfos</a>
+  <a href="/asz-riesa/mitwirkung.html">Mitwirkung</a>
+  <a href="/asz-riesa/foerderverein.html">Förderverein</a>
+  <a href="/asz-riesa/kontakt.html">Kontakt</a>
+  <a href="/asz-riesa/impressum.html">Impressum</a>
+  <a href="/asz-riesa/datenschutz.html">Datenschutz</a>
+</div>
+
+<!-- INFO BANNER -->
+<div class="info-banner">
+  <div class="info-banner-inner">
+    <div class="info-banner-icon">
+      <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z"/>
+      </svg>
+    </div>
+    <p><strong>Schulplatz gesucht?</strong> Bitte zuerst eine Mitteilung an <a href="mailto:schulplatzsuche-os@lasub.smk.sachsen.de">schulplatzsuche-os@lasub.smk.sachsen.de</a> — weitere Infos per Telefon.</p>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow">Willkommen</div>
+    <h1>Gemeinsam<br><em>mehr</em> erreichen.</h1>
+    <p class="hero-desc">Die Oberschule Am Sportzentrum Riesa — ein Ort des Lernens, der Persönlichkeitsentwicklung und des Miteinanders im Herzen Sachsens.</p>
+    <div class="hero-ctas">
+      <a href="/asz-riesa/schulprofil.html" class="btn btn-primary">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        Unser Schulprofil
+      </a>
+      <a href="/asz-riesa/kontakt.html" class="btn btn-outline">Kontakt aufnehmen</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-img-wrap">
+      <img
+        src="../fileadmin/_special/benutzer/1123/Downloads/25-Start.jpg"
+        alt="Schulgebäude der Oberschule Am Sportzentrum Riesa"
+        onerror="this.parentElement.innerHTML='<div class=\'hero-img-placeholder\'><svg viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' d=\'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4\'/></svg></div>'"
+      >
+    </div>
+    <div class="hero-stat-strip">
+      <div class="hero-stat">
+        <strong>9+</strong>
+        <small>Jahrgänge</small>
+      </div>
+      <div class="hero-stat">
+        <strong>Riesa</strong>
+        <small>Sachsen</small>
+      </div>
+      <div class="hero-stat">
+        <strong>SCP</strong>
+        <small>Startchancen</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- QUICK LINKS -->
+<section class="section reveal">
+  <div class="section-label">Schnellzugriff</div>
+  <div class="section-title">Was suchen Sie?</div>
+  <div class="cards-grid">
+    <a href="/asz-riesa/termine.html" class="card">
+      <div class="card-icon">
+        <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+      </div>
+      <h3>Termine &amp; Veranstaltungen</h3>
+      <p>Aktuelle Schultermine, Feiertage, Elternabende und besondere Veranstaltungen auf einen Blick.</p>
+      <span class="card-arrow">Ansehen →</span>
+    </a>
+    <a href="/asz-riesa/schulprofil.html" class="card">
+      <div class="card-icon">
+        <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+        </svg>
+      </div>
+      <h3>Schulprofil</h3>
+      <p>Ganztagsangebote, Projekte, Ansprechpartner und Informationen über unsere Lerngemeinschaft.</p>
+      <span class="card-arrow">Mehr erfahren →</span>
+    </a>
+    <a href="/asz-riesa/schulinfos.html" class="card">
+      <div class="card-icon">
+        <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+        </svg>
+      </div>
+      <h3>Schulinfos</h3>
+      <p>Wichtige Informationen rund um die Schule, Unterrichtszeiten, Stundenpläne und mehr.</p>
+      <span class="card-arrow">Zur Übersicht →</span>
+    </a>
+    <a href="/asz-riesa/bilder.html" class="card">
+      <div class="card-icon">
+        <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+        </svg>
+      </div>
+      <h3>Bildergalerie</h3>
+      <p>Eindrücke aus dem Schulalltag, von Projekttagen, Ausflügen und besonderen Ereignissen.</p>
+      <span class="card-arrow">Bilder ansehen →</span>
+    </a>
+    <a href="/asz-riesa/mitwirkung.html" class="card">
+      <div class="card-icon">
+        <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0"/>
+        </svg>
+      </div>
+      <h3>Mitwirkung</h3>
+      <p>Elternrat, Schülerrat und Möglichkeiten zur aktiven Mitgestaltung unserer Schule.</p>
+      <span class="card-arrow">Mitmachen →</span>
+    </a>
+    <a href="/asz-riesa/kontakt.html" class="card">
+      <div class="card-icon">
+        <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+        </svg>
+      </div>
+      <h3>Kontakt</h3>
+      <p>Fragen oder Hinweise? Schreiben Sie uns — wir freuen uns über Ihre Nachricht.</p>
+      <span class="card-arrow">Schreiben Sie uns →</span>
+    </a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- STARTCHANCEN PROGRAM -->
+<section class="section reveal">
+  <div class="section-label">Förderung</div>
+  <div class="program-block">
+    <div class="program-content">
+      <h2>Startchancen-Programm</h2>
+      <p>Wir sind eine Schule, die am bundesweiten Startchancen-Programm teilnimmt und damit gezielt in Bildungsgerechtigkeit und Schulqualität investiert.</p>
+      <ul class="program-list">
+        <li>Weiterentwicklung der Schulqualität</li>
+        <li>Optimierung der schulischen Lernumgebung</li>
+        <li>Stärkung multiprofessioneller Teams</li>
+        <li>Erhöhung der Bildungs- und Chancengerechtigkeit</li>
+        <li>Unterstützung der Persönlichkeitsentwicklung aller Schülerinnen und Schüler</li>
+      </ul>
+    </div>
+    <div class="program-visual">
+      <img src="../fileadmin/_special/benutzer/1123/Downloads/SCP/logo_startchancen.jpg"
+           alt="Logo des Startchancen-Programms"
+           style="max-width:280px;width:100%;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,0.1);">
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- NOTICES -->
+<section class="section reveal">
+  <div class="section-label">Hinweise</div>
+  <div class="section-title">Wichtige Informationen</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+    <div class="notice">
+      <h3>Transparenzhinweis</h3>
+      <p>Seit dem 1. Januar 2023 gilt das Sächsische Transparenzgesetz (SächsGVBl. S. 486). Es gewährt jeder Person Zugang zu verfügbaren Informationen transparenzpflichtiger Stellen im Freistaat Sachsen, soweit keine Ausnahme greift. Schulen unterliegen der Pflicht nur hinsichtlich Drittmittelinformationen.</p>
+    </div>
+    <div class="notice">
+      <h3>Schulporträt des SMK</h3>
+      <p>Ergänzend zu unserer Homepage steht Ihnen das <a href="https://schuldatenbank.sachsen.de/index.php?id=100&institution_key=4331351" target="_blank" rel="noreferrer" style="color:var(--accent);font-weight:500;">Schulporträt des SMK</a> zur Verfügung. Es bietet eine öffentliche schulische Berichterstattung auf Basis verbindlicher Qualitätskriterien.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal">
+  <a href="https://lehrer-werden-in-sachsen.de/" target="_blank" rel="noreferrer" style="
+    display:block;
+    border-radius:var(--radius);
+    overflow:hidden;
+    text-decoration:none;
+    transition:all 0.25s;
+    box-shadow: var(--shadow);
+  " onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 12px 40px rgba(0,0,0,0.18)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow)'">
+    <img src="../fileadmin/_special/benutzer/1123/Downloads/lehrerwerden__1_.png"
+         alt="Lehrer werden in Sachsen – Hast du auch das Zeug zum Klassenliebling?"
+         style="width:100%;height:auto;display:block;">
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="nav-logo">
+        <div class="nav-logo-badge" style="background:rgba(255,255,255,0.12);padding:2px;">
+          <img src="../fileadmin/_processed_/2/9/csm_Logo-MamSZ_24bc79436c.jpg" alt="ASZ Logo" style="width:36px;height:34px;object-fit:contain;border-radius:6px;">
+        </div>
+        <div class="nav-logo-text">
+          Oberschule Am Sportzentrum
+          <span>Riesa · Sachsen</span>
+        </div>
+      </div>
+      <p>Eine staatliche Oberschule in Riesa, gefördert durch den Sächsischen Bildungsserver und das Startchancen-Programm.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Schule</h4>
+      <ul>
+        <li><a href="/asz-riesa/schulprofil.html">Schulprofil</a></li>
+        <li><a href="/asz-riesa/schulinfos.html">Schulinfos</a></li>
+        <li><a href="/asz-riesa/termine.html">Termine</a></li>
+        <li><a href="/asz-riesa/bilder.html">Bilder</a></li>
+        <li><a href="/asz-riesa/archiv.html">Archiv</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Gemeinschaft</h4>
+      <ul>
+        <li><a href="/asz-riesa/mitwirkung.html">Mitwirkung</a></li>
+        <li><a href="/asz-riesa/foerderverein.html">Förderverein</a></li>
+        <li><a href="/asz-riesa/kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <ul>
+        <li><a href="/asz-riesa/impressum.html">Impressum</a></li>
+        <li><a href="/asz-riesa/datenschutz.html">Datenschutz</a></li>
+        <li><a href="/asz-riesa/barrierefreiheit.html">Barrierefreiheit</a></li>
+        <li><a href="https://schuldatenbank.sachsen.de/index.php?id=100&institution_key=4331351" target="_blank" rel="noreferrer">Schulporträt</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <span>© 2025 Oberschule Am Sportzentrum Riesa</span>
+      <span>Bereitgestellt mit Unterstützung des <a href="https://www.sachsen.schule" target="_blank" rel="noreferrer">Sächsischen Bildungsservers</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  function toggleNav() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
