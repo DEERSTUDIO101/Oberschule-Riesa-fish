@@ -1,4 +1,4 @@
-﻿[build]
+[build]
   publish = "cms.sachsen.schule"
 
 [[redirects]]
