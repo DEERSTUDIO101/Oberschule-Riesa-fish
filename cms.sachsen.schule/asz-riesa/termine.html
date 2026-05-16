@@ -1,171 +1,243 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Termine – Oberschule Am Sportzentrum Riesa</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Termine | Oberschule Am Sportzentrum Riesa</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#fdf6f0;--bg2:#f5ece3;--ink:#1a1208;--ink2:#5a4a38;--accent:#c0390a;--accent2:#e05a1a;--accent3:#fdd5b8;--warm:#e07a2a;--card:#ffffff;--border:#e8d8c8;--radius:16px;--radius-sm:8px;--shadow:0 4px 24px rgba(192,57,10,0.10);--shadow-hover:0 8px 40px rgba(192,57,10,0.18);}
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.65;overflow-x:hidden;}
-  body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:0.5;}
-  nav{position:sticky;top:0;z-index:100;background:rgba(253,246,240,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 clamp(1rem,4vw,3rem);}
-  .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;height:68px;gap:2rem;}
-  .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;}
-  .nav-logo-badge{width:40px;height:40px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Syne',sans-serif;font-weight:800;font-size:15px;flex-shrink:0;}
-  .nav-logo-text{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;line-height:1.2;color:var(--ink);}
-  .nav-logo-text span{display:block;font-size:11px;font-weight:400;color:var(--ink2);font-family:'DM Sans',sans-serif;}
-  .nav-links{display:flex;list-style:none;gap:0.15rem;margin-left:auto;flex-wrap:wrap;}
-  .nav-links a{display:block;padding:6px 13px;color:var(--ink2);text-decoration:none;font-size:14px;font-weight:400;border-radius:var(--radius-sm);transition:all 0.2s;white-space:nowrap;}
-  .nav-links a:hover{background:var(--accent3);color:var(--accent);}
-  .nav-links a.active{background:var(--accent);color:#fff;}
-  .nav-menu-btn{display:none;background:none;border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:8px 10px;cursor:pointer;margin-left:auto;flex-direction:column;gap:5px;}
-  .nav-menu-btn span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;}
-  .mobile-nav{display:none;position:fixed;top:68px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border);padding:1rem clamp(1rem,4vw,3rem);z-index:99;flex-direction:column;gap:4px;box-shadow:0 8px 32px rgba(0,0,0,0.1);}
-  .mobile-nav.open{display:flex;}
-  .mobile-nav a{padding:10px 14px;color:var(--ink);text-decoration:none;font-size:15px;border-radius:var(--radius-sm);transition:all 0.18s;}
-  .mobile-nav a:hover{background:var(--accent3);color:var(--accent);}
-  .page-hero{background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);color:#fff;padding:clamp(2.5rem,6vw,4.5rem) clamp(1rem,4vw,3rem);}
-  .page-hero-inner{max-width:1200px;margin:0 auto;}
-  .page-hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);color:#fff;font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:5px 14px;border-radius:999px;margin-bottom:1rem;}
-  .page-hero h1{font-family:'Syne',sans-serif;font-size:clamp(1.5rem,4vw,3.5rem);font-weight:800;line-height:1.08;letter-spacing:-0.03em;margin-bottom:0.75rem;}
-  .page-hero p{opacity:0.82;font-size:1.05rem;font-weight:300;max-width:540px;}
-  .section{max-width:1200px;margin:0 auto;padding:3rem clamp(1rem,4vw,3rem);}
-  .section-label{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent2);margin-bottom:0.5rem;}
-  .section-title{font-family:'Syne',sans-serif;font-size:clamp(1.2rem,3vw,2.2rem);font-weight:800;letter-spacing:-0.02em;line-height:1.15;margin-bottom:2rem;}
-  .divider{height:1px;background:var(--border);margin:0 clamp(1rem,4vw,3rem);}
-  .termine-list{display:flex;flex-direction:column;gap:1rem;}
-  .termin-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.5rem;display:flex;align-items:flex-start;gap:1.25rem;transition:all 0.22s;}
-  .termin-item:hover{transform:translateX(4px);box-shadow:var(--shadow);border-color:var(--accent3);}
-  .termin-date{background:var(--accent);color:#fff;border-radius:10px;padding:10px 14px;text-align:center;min-width:62px;flex-shrink:0;}
-  .termin-date strong{display:block;font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;line-height:1;}
-  .termin-date small{font-size:11px;opacity:0.85;text-transform:uppercase;}
-  .termin-content h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:4px;}
-  .termin-content p{font-size:0.875rem;color:var(--ink2);font-weight:300;}
-  .termin-tag{display:inline-block;background:var(--accent3);color:var(--accent);font-size:11px;font-weight:500;padding:2px 10px;border-radius:999px;margin-top:6px;}
-  .info-box{background:var(--bg2);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:var(--radius);padding:1.5rem 1.75rem;}
-  .info-box h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:0.5rem;color:var(--accent);}
-  .info-box p{font-size:0.875rem;color:var(--ink2);font-weight:300;line-height:1.6;}
-  footer{background:var(--ink);color:rgba(255,255,255,0.6);margin-top:5rem;}
-  .footer-inner{max-width:1200px;margin:0 auto;padding:3rem clamp(1rem,4vw,3rem) 2rem;display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:2.5rem;}
-  .footer-col h4{font-family:'Syne',sans-serif;font-weight:600;font-size:0.85rem;color:#fff;letter-spacing:0.04em;margin-bottom:1rem;text-transform:uppercase;}
-  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:6px;}
-  .footer-col ul a{font-size:0.85rem;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s;}
-  .footer-col ul a:hover{color:rgba(255,255,255,0.85);}
-  .footer-brand p{margin-top:1rem;font-size:0.85rem;line-height:1.7;color:rgba(255,255,255,0.45);}
-  .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding:1.25rem clamp(1rem,4vw,3rem);}
-  .footer-bottom-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:12px;color:rgba(255,255,255,0.3);}
-  .footer-bottom-inner a{color:rgba(255,255,255,0.4);text-decoration:none;}
-  .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.55s ease,transform 0.55s ease;}
-  .reveal.visible{opacity:1;transform:none;}
-  @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
-  @media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr;}.nav-links{display:none;}.nav-menu-btn{display:flex;}}
-  @media(max-width:600px){.footer-inner{grid-template-columns:1fr;} @media(max-width:400px){.page-hero h1{font-size:1.4rem;word-break:break-word;} .hero h1{font-size:1.5rem;} .section-title{font-size:1.15rem;}}.termin-item{flex-direction:column;gap:0.75rem;}}
+:root{--bg:#fdf6f0;--bg2:#f5ece3;--ink:#1a1208;--ink2:#5a4a38;--accent:#c0390a;--accent2:#e05a1a;--accent3:#fdd5b8;--card:#fff;--border:#e8d8c8;--radius:14px;--radius-sm:8px;--shadow:0 4px 24px rgba(192,57,10,.10);--shadow-h:0 8px 40px rgba(192,57,10,.18);--px:1rem;}
+@media(min-width:640px){:root{--px:1.5rem;}}@media(min-width:1024px){:root{--px:3rem;}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}img{max-width:100%;height:auto;display:block;}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.65;overflow-x:hidden;}
+nav{position:sticky;top:0;z-index:200;background:rgba(253,246,240,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 var(--px);}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;height:60px;gap:1rem;}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;min-width:0;}
+.nav-logo img{width:34px;height:32px;object-fit:contain;border-radius:6px;flex-shrink:0;}
+.nav-logo-text{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;line-height:1.2;color:var(--ink);min-width:0;overflow:hidden;}
+.nav-logo-text span{display:block;font-size:10px;font-weight:400;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.nav-links{display:none;}
+.nav-menu-btn{display:flex;flex-direction:column;gap:5px;background:none;border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:8px 10px;cursor:pointer;margin-left:auto;flex-shrink:0;}
+.nav-menu-btn span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:all .3s;}
+.nav-menu-btn.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.nav-menu-btn.open span:nth-child(2){opacity:0;}
+.nav-menu-btn.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+.mobile-nav{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:var(--bg);z-index:199;overflow-y:auto;flex-direction:column;gap:0;padding:.5rem var(--px) 2rem;box-shadow:0 8px 32px rgba(0,0,0,.12);}
+.mobile-nav.open{display:flex;}
+.mobile-nav a{display:block;padding:14px 16px;color:var(--ink);font-size:16px;text-decoration:none;border-radius:var(--radius-sm);border-bottom:1px solid var(--border);transition:all .18s;}
+.mobile-nav a:last-child{border-bottom:none;}
+.mobile-nav a.active,.mobile-nav a:hover{background:var(--accent3);color:var(--accent);}
+@media(min-width:900px){.nav-inner{height:68px;}.nav-menu-btn{display:none;}.nav-links{display:flex;list-style:none;gap:2px;margin-left:auto;flex-wrap:wrap;}.nav-links a{display:block;padding:6px 12px;color:var(--ink2);font-size:13.5px;text-decoration:none;border-radius:var(--radius-sm);transition:all .2s;white-space:nowrap;}.nav-links a:hover{background:var(--accent3);color:var(--accent);}.nav-links a.active{background:var(--accent);color:#fff;}}
+.page-hero{background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);color:#fff;padding:2.5rem var(--px) 2rem;}
+.page-hero-inner{max-width:1200px;margin:0 auto;}
+.page-hero-label{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;opacity:.75;margin-bottom:.6rem;}
+.page-hero h1{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,6vw,3rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;}
+.page-hero p{margin-top:.75rem;opacity:.85;font-size:1rem;font-weight:300;}
+.section{max-width:1200px;margin:0 auto;padding:2rem var(--px);}
+@media(min-width:640px){.section{padding:2.5rem var(--px);}}
+.section-label{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2);margin-bottom:.4rem;}
+.section-title{font-family:'Syne',sans-serif;font-size:clamp(1.25rem,4vw,2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:1.25rem;}
+.divider{height:1px;background:var(--border);margin:0 var(--px);}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.notice{background:var(--bg2);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:var(--radius);padding:1.1rem 1.25rem;margin-bottom:1rem;}
+.notice h3{font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.4rem;color:var(--accent);}
+.notice p{font-size:.875rem;color:var(--ink2);font-weight:300;line-height:1.6;}
+.notice a{color:var(--accent);font-weight:500;}
+.highlight-box{background:linear-gradient(135deg,var(--accent3),#ffe0c8);border:1px solid #f5c0a0;border-radius:var(--radius);padding:1.25rem 1.5rem;margin-bottom:1.5rem;}
+.highlight-box h3{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--accent);margin-bottom:.4rem;}
+.highlight-box p{color:var(--ink2);font-size:.9rem;font-weight:300;}
+.highlight-box a{color:var(--accent);font-weight:500;}
+/* Responsive table wrapper */
+.table-scroll{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+table.data-table{width:100%;border-collapse:collapse;font-size:.875rem;min-width:320px;}
+table.data-table th{background:var(--accent);color:#fff;font-family:'Syne',sans-serif;font-weight:600;padding:10px 14px;text-align:left;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;}
+table.data-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--ink2);}
+table.data-table tr:last-child td{border-bottom:none;}
+table.data-table tr:hover td{background:var(--bg2);}
+table.data-table td:first-child{color:var(--ink);font-weight:500;}
+.tag{display:inline-block;background:var(--accent3);color:var(--accent);font-size:11px;font-weight:500;padding:3px 10px;border-radius:999px;letter-spacing:.04em;margin-bottom:.5rem;}
+.grid-2{display:grid;grid-template-columns:1fr;gap:1rem;}
+@media(min-width:700px){.grid-2{grid-template-columns:1fr 1fr;gap:1.25rem;}}
+footer{background:var(--ink);color:rgba(255,255,255,.6);margin-top:4rem;}
+.footer-inner{max-width:1200px;margin:0 auto;padding:2.5rem var(--px) 1.5rem;display:grid;grid-template-columns:1fr;gap:2rem;}
+@media(min-width:600px){.footer-inner{grid-template-columns:1fr 1fr;}}
+@media(min-width:1000px){.footer-inner{grid-template-columns:1.5fr repeat(3,1fr);}}
+.footer-brand-logo{display:flex;align-items:center;gap:10px;margin-bottom:.75rem;}
+.footer-brand-logo img{width:34px;height:32px;object-fit:contain;border-radius:6px;}
+.footer-brand-logo-text{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;line-height:1.2;color:#fff;}
+.footer-brand-logo-text span{display:block;font-size:11px;font-weight:400;color:rgba(255,255,255,.5);}
+.footer-brand p{font-size:.83rem;line-height:1.7;color:rgba(255,255,255,.4);}
+.footer-col h4{font-family:'Syne',sans-serif;font-weight:600;font-size:.8rem;color:#fff;letter-spacing:.05em;margin-bottom:.75rem;text-transform:uppercase;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:5px;}
+.footer-col ul a{font-size:.83rem;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s;}
+.footer-col ul a:hover{color:rgba(255,255,255,.85);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding:1rem var(--px);}
+.footer-bottom-inner{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:.4rem;font-size:12px;color:rgba(255,255,255,.3);}
+@media(min-width:640px){.footer-bottom-inner{flex-direction:row;justify-content:space-between;align-items:center;}}
+.footer-bottom-inner a{color:rgba(255,255,255,.4);text-decoration:none;}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease;}
+.reveal.visible{opacity:1;transform:none;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:none;}}
+.animate-in{animation:fadeUp .55s ease both;}
 </style>
 </head>
 <body>
 <nav>
   <div class="nav-inner">
     <a href="/asz-riesa/start.html" class="nav-logo">
-      <div class="nav-logo-badge" style="background:transparent;padding:2px;">
-        <img src="../fileadmin/_processed_/2/9/csm_Logo-MamSZ_24bc79436c.jpg" alt="ASZ Logo" style="width:36px;height:34px;object-fit:contain;border-radius:6px;">
-      </div>
+      <img src="../fileadmin/_processed_/2/9/csm_Logo-MamSZ_24bc79436c.jpg" alt="ASZ Logo">
       <div class="nav-logo-text">Oberschule Am Sportzentrum<span>Riesa · Sachsen</span></div>
     </a>
     <ul class="nav-links">
-      <li><a href="/asz-riesa/start.html">Start</a></li>
-      <li><a href="/asz-riesa/termine.html" class="active">Termine</a></li>
-      <li><a href="/asz-riesa/bilder.html">Bilder</a></li>
-      <li><a href="/asz-riesa/schulprofil.html">Schulprofil</a></li>
-      <li><a href="/asz-riesa/schulinfos.html">Schulinfos</a></li>
-      <li><a href="/asz-riesa/mitwirkung.html">Mitwirkung</a></li>
-      <li><a href="/asz-riesa/foerderverein.html">Förderverein</a></li>
-      <li><a href="/asz-riesa/kontakt.html">Kontakt</a></li>
+      <li><a href="/asz-riesa/start.html">Start</a></li><li><a href="/asz-riesa/termine.html" class="active">Termine</a></li><li><a href="/asz-riesa/bilder.html">Bilder</a></li><li><a href="/asz-riesa/schulprofil.html">Schulprofil</a></li><li><a href="/asz-riesa/schulinfos.html">Schulinfos</a></li><li><a href="/asz-riesa/mitwirkung.html">Mitwirkung</a></li><li><a href="/asz-riesa/foerderverein.html">Förderverein</a></li><li><a href="/asz-riesa/kontakt.html">Kontakt</a></li>
     </ul>
-    <button class="nav-menu-btn" onclick="toggleNav()" aria-label="Menü"><span></span><span></span><span></span></button>
+    <button class="nav-menu-btn" id="menuBtn" onclick="toggleNav()" aria-label="Menü"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="mobile-nav" id="mobileNav">
-  <a href="/asz-riesa/start.html">Start</a><a href="/asz-riesa/termine.html">Termine</a><a href="/asz-riesa/bilder.html">Bilder</a><a href="/asz-riesa/schulprofil.html">Schulprofil</a><a href="/asz-riesa/schulinfos.html">Schulinfos</a><a href="/asz-riesa/mitwirkung.html">Mitwirkung</a><a href="/asz-riesa/foerderverein.html">Förderverein</a><a href="/asz-riesa/kontakt.html">Kontakt</a><a href="/asz-riesa/impressum.html">Impressum</a><a href="/asz-riesa/datenschutz.html">Datenschutz</a>
+  <a href="/asz-riesa/start.html">Start</a><a href="/asz-riesa/termine.html" class="active">Termine</a><a href="/asz-riesa/bilder.html">Bilder</a><a href="/asz-riesa/schulprofil.html">Schulprofil</a><a href="/asz-riesa/schulinfos.html">Schulinfos</a><a href="/asz-riesa/mitwirkung.html">Mitwirkung</a><a href="/asz-riesa/foerderverein.html">Förderverein</a><a href="/asz-riesa/kontakt.html">Kontakt</a><a href="/asz-riesa/impressum.html">Impressum</a><a href="/asz-riesa/datenschutz.html">Datenschutz</a>
 </div>
 
-<div class="page-hero">
+<div class="page-hero animate-in">
   <div class="page-hero-inner">
-    <div class="page-hero-eyebrow">Übersicht</div>
+    <div class="page-hero-label">Schuljahr 2025/2026</div>
     <h1>Termine &amp; Veranstaltungen</h1>
-    <p>Aktuelle Schultermine, Feiertage, Elternabende und besondere Veranstaltungen auf einen Blick.</p>
+    <p>Schultermine, Prüfungen, Ferien und Berufsorientierung auf einen Blick.</p>
   </div>
 </div>
 
 <section class="section reveal">
-  <div class="section-label">Schuljahr 2024/25</div>
-  <div class="section-title">Kommende Termine</div>
-  <div class="termine-list">
-    <div class="termin-item">
-      <div class="termin-date"><strong>15</strong><small>Jan</small></div>
-      <div class="termin-content">
-        <h3>Elternabend Klasse 5 &amp; 6</h3>
-        <p>Informationsabend für Eltern der Klassenstufen 5 und 6 — Beginn 18:00 Uhr in der Aula.</p>
-        <span class="termin-tag">Elternabend</span>
+  <div class="highlight-box">
+    <h3>📢 Online-Elternabend – 04.06.2026, 18:30 Uhr</h3>
+    <p>Thema: <strong>„Sucht und illegale Drogen"</strong> (Fachdienst Prävention). Für Eltern ab Klasse 7. Zugangslink in der <a href="/fileadmin/_special/benutzer/1123/Downloads/Einladung_Online_Elternabend_04.06.26.pdf" target="_blank">Einladung (PDF)</a>.</p>
+  </div>
+
+  <div class="section-label">Schuljahr</div>
+  <div class="section-title">Allgemeine Termine</div>
+  <div class="card">
+    <div class="table-scroll">
+      <table class="data-table">
+        <thead><tr><th>Veranstaltung</th><th>Datum</th></tr></thead>
+        <tbody>
+          <tr><td>Schuljahres-Start</td><td>11.08.2025</td></tr>
+          <tr><td>Schuljahresbeginn Klasse 5</td><td>11.08.2025, 08:00 Uhr</td></tr>
+          <tr><td>Erster Elternabend</td><td>25.08.2025</td></tr>
+          <tr><td>Halloween Klasse 5</td><td>29.10.2025</td></tr>
+          <tr><td>Fachlehrer-Sprechtag</td><td>10.11.2025</td></tr>
+          <tr><td>Buß- und Bettag</td><td>19.11.2025</td></tr>
+          <tr><td>Weihnachtsmarkt (Tag der offenen Tür)</td><td>27.11.2025</td></tr>
+          <tr><td>Unterrichtsfreier Tag</td><td>28.11.2025</td></tr>
+          <tr><td>Schulkonferenz</td><td>08.12.2025</td></tr>
+          <tr><td>Halbjahreszeugnisse</td><td>06.02.2026</td></tr>
+          <tr><td>Anmeldung Klasse 5 (neu)</td><td>bis 27.02.2026</td></tr>
+          <tr><td>Abgabe Wunsch HS/RS-Bildungsgang</td><td>bis 27.02.2026</td></tr>
+          <tr><td>Abgabe Wunsch MU, KU / GE, GEO, GK</td><td>bis 27.02.2026</td></tr>
+          <tr><td>Girl's / Boy's Day</td><td>23.04.2026</td></tr>
+          <tr><td>Änderung Bescheid (Klasse 6)</td><td>26.06.2026</td></tr>
+          <tr><td>Fototermin (Stadtpark-Treppe)</td><td>30.06.2026</td></tr>
+          <tr><td>Abschluss im „STERN"</td><td>30.06.2026</td></tr>
+          <tr><td>Sportfest</td><td>02.07.2026</td></tr>
+          <tr><td>Jahreszeugnisse</td><td>03.07.2026</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section reveal">
+  <div class="section-label">Abschlussklassen</div>
+  <div class="section-title">Prüfungstermine</div>
+  <div class="notice"><h3>Hinweis</h3><p>Alle Termine aus der VwV Bedarf und Schuljahresablauf. Antrag auf mündliche Zusatzprüfungen schriftlich an den Schulleiter. Prüfungsarbeiten vergangener Jahre: <a href="http://www.schule.sachsen.de/119.htm" target="_blank" rel="noreferrer">schule.sachsen.de</a> (Passwort erforderlich).</p></div>
+  <div class="card">
+    <div class="table-scroll">
+      <table class="data-table">
+        <thead><tr><th>Prüfung / Ereignis</th><th>Datum</th></tr></thead>
+        <tbody>
+          <tr><td>Bekanntgabe der Jahresnoten</td><td>30. April 2026</td></tr>
+          <tr><td>Wahl naturwiss. Prüfungsfach</td><td>bis 04. Mai 2026</td></tr>
+          <tr><td>Wahl mündliche Prüfungsfächer</td><td>bis 04. Mai 2026</td></tr>
+          <tr><td>EN – schriftlich</td><td>04. Mai 2026</td></tr>
+          <tr><td>DE – schriftlich</td><td>06. Mai 2026</td></tr>
+          <tr><td>MA – schriftlich</td><td>08. Mai 2026</td></tr>
+          <tr><td>BIO – schriftlich</td><td>12. Mai 2026</td></tr>
+          <tr><td>CH / PH – schriftlich</td><td>13. Mai 2026</td></tr>
+          <tr><td>Bekanntgabe schriftl. EN-Ergebnisse</td><td>bis 18. Mai 2026</td></tr>
+          <tr><td>EN-Gruppen festlegen</td><td>bis 18. Mai 2026</td></tr>
+          <tr><td>Konsultationen</td><td>ab 18. Mai 2026</td></tr>
+          <tr><td>EN – praktischer Teil</td><td>ab 20. Mai 2026</td></tr>
+          <tr><td>Bekanntgabe schriftl. Prüfungsergebnisse</td><td>01. Juni 2026</td></tr>
+          <tr><td>Mündliche Prüfungen</td><td>ab 04. Juni 2026</td></tr>
+          <tr><td>Englisch – Nachtermin</td><td>08. Juni 2026</td></tr>
+          <tr><td>Deutsch – Nachtermin</td><td>10. Juni 2026</td></tr>
+          <tr><td>Mathematik – Nachtermin</td><td>12. Juni 2026</td></tr>
+          <tr><td>BIO / CH / PH – Nachtermin</td><td>16. Juni 2026</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section reveal">
+  <div class="grid-2">
+    <div>
+      <div class="section-label">Schulfreie Zeiten</div>
+      <div class="section-title">Ferien 2025/26</div>
+      <div class="card">
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th>Ferien</th><th>Zeitraum</th></tr></thead>
+            <tbody>
+              <tr><td>Herbstferien</td><td>06.10. – 18.10.2025</td></tr>
+              <tr><td>Weihnachtsferien</td><td>22.12.2025 – 02.01.2026</td></tr>
+              <tr><td>Winterferien</td><td>09.02. – 21.02.2026</td></tr>
+              <tr><td>Osterferien</td><td>03.04. – 10.04.2026</td></tr>
+              <tr><td>Pfingstmontag</td><td>25.05.2026</td></tr>
+              <tr><td>Sommerferien</td><td>04.07. – 14.08.2026</td></tr>
+              <tr><td>Unterrichtsfreier Tag</td><td>15.05.2026</td></tr>
+              <tr><td>Unterrichtsfreier Tag (intern)</td><td>28.11.2025</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
-    <div class="termin-item">
-      <div class="termin-date"><strong>20</strong><small>Jan</small></div>
-      <div class="termin-content">
-        <h3>Winterferien beginnen</h3>
-        <p>Die Winterferien dauern vom 20.01. bis 31.01.2025. Erster Schultag danach: 03.02.2025.</p>
-        <span class="termin-tag">Ferien</span>
-      </div>
-    </div>
-    <div class="termin-item">
-      <div class="termin-date"><strong>14</strong><small>Feb</small></div>
-      <div class="termin-content">
-        <h3>Projekttag „Demokratie &amp; Miteinander"</h3>
-        <p>Schulweiter Projekttag mit verschiedenen Arbeitsgruppen zu gesellschaftlichen Themen.</p>
-        <span class="termin-tag">Schulleben</span>
-      </div>
-    </div>
-    <div class="termin-item">
-      <div class="termin-date"><strong>07</strong><small>Mrz</small></div>
-      <div class="termin-content">
-        <h3>Elternratssitzung</h3>
-        <p>Reguläre Sitzung des Elternrates um 18:30 Uhr im Lehrerzimmer.</p>
-        <span class="termin-tag">Mitwirkung</span>
-      </div>
-    </div>
-    <div class="termin-item">
-      <div class="termin-date"><strong>17</strong><small>Mrz</small></div>
-      <div class="termin-content">
-        <h3>Osterferien beginnen</h3>
-        <p>Osterferien vom 17.03. bis 25.04.2025. Unterrichtsbeginn nach den Ferien: 28.04.2025.</p>
-        <span class="termin-tag">Ferien</span>
-      </div>
-    </div>
-    <div class="termin-item">
-      <div class="termin-date"><strong>05</strong><small>Mai</small></div>
-      <div class="termin-content">
-        <h3>Tag der offenen Tür</h3>
-        <p>Interessierte Schülerinnen, Schüler und Eltern sind herzlich eingeladen, unsere Schule kennenzulernen. 10:00–14:00 Uhr.</p>
-        <span class="termin-tag">Besonders</span>
-      </div>
-    </div>
-    <div class="termin-item">
-      <div class="termin-date"><strong>20</strong><small>Jun</small></div>
-      <div class="termin-content">
-        <h3>Schulfest</h3>
-        <p>Das alljährliche Schulfest mit Aufführungen, Sport, Spiel und gemeinsamem Miteinander.</p>
-        <span class="termin-tag">Schulleben</span>
-      </div>
-    </div>
-    <div class="termin-item">
-      <div class="termin-date"><strong>04</strong><small>Jul</small></div>
-      <div class="termin-content">
-        <h3>Sommerferien beginnen</h3>
-        <p>Letzter Unterrichtstag: 03.07.2025. Sommerferien bis 13.08.2025.</p>
-        <span class="termin-tag">Ferien</span>
+    <div>
+      <div class="section-label">Berufsorientierung</div>
+      <div class="section-title">Klassen 7–9</div>
+      <div class="card" style="padding:1.25rem;display:flex;flex-direction:column;gap:1rem;">
+        <div>
+          <span class="tag">Klasse 7</span>
+          <ul style="padding-left:1rem;font-size:.875rem;color:var(--ink2);line-height:1.9;">
+            <li>25.08.2025: Elternabend, 17:30 Uhr, Aula</li>
+            <li>26.–27.05.2026: Potenzialanalyse 7b</li>
+            <li>28.–29.05.2026: Potenzialanalyse 7a</li>
+          </ul>
+        </div>
+        <div>
+          <span class="tag">Klasse 8</span>
+          <ul style="padding-left:1rem;font-size:.875rem;color:var(--ink2);line-height:1.9;">
+            <li>22.–26.09.2025: Berufswahlpass-Projekt</li>
+            <li>23.01.2026: Messe „Karrierestart"</li>
+            <li>09.03.2026: „Schau rein!"</li>
+            <li>13.–24.04.2026: Werkstatt-Tage Qualizentrum</li>
+            <li>04.–22.05.2026: Schul-Praktikum</li>
+          </ul>
+        </div>
+        <div>
+          <span class="tag">Klasse 9</span>
+          <ul style="padding-left:1rem;font-size:.875rem;color:var(--ink2);line-height:1.9;">
+            <li>30.09.2025: Elternabend Arbeitsagentur</li>
+            <li>20.–22.01.2026: Bewerbertraining</li>
+            <li>23.01.2026: Messe „Karrierestart"</li>
+            <li>08.–19.06.2026: Schul-Praktikum</li>
+          </ul>
+        </div>
+        <div style="border-top:1px solid var(--border);padding-top:.75rem;font-size:.83rem;color:var(--ink2);">
+          Weitere Infos: <a href="https://www.air-meissen.de" target="_blank" rel="noreferrer" style="color:var(--accent);font-weight:500;">AIR-Meißen</a> · <a href="http://www.jugendberufsagentur-meissen.de" target="_blank" rel="noreferrer" style="color:var(--accent);font-weight:500;">Jugendberufsagentur Meißen</a>
+        </div>
       </div>
     </div>
   </div>
@@ -174,32 +246,28 @@
 <div class="divider"></div>
 
 <section class="section reveal">
-  <div class="info-box">
-    <h3>Hinweis zu Terminen</h3>
-    <p>Alle Termine sind ohne Gewähr und können sich kurzfristig ändern. Bitte achten Sie auf Informationsschreiben der Schule und Mitteilungen über das Klassenbuch. Bei Fragen wenden Sie sich an das Schulsekretariat.</p>
-  </div>
+  <div class="section-label">Mittagessen</div>
+  <div class="section-title">Essenversorgung</div>
+  <div class="notice"><h3>EC Elbland Catering GmbH</h3><p>Bestellungen nur noch über <a href="https://bestellung-elbland.de" target="_blank" rel="noreferrer">bestellung-elbland.de</a>. Alte Domain leitet weiter. Bitte neue Web-App installieren (Link auf der Bestellseite) — die bisherige App funktioniert nicht mehr.</p></div>
 </section>
 
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <a href="/asz-riesa/start.html" class="nav-logo">
-        <div class="nav-logo-badge" style="background:rgba(255,255,255,0.12);padding:2px;"><img src="../fileadmin/_processed_/2/9/csm_Logo-MamSZ_24bc79436c.jpg" alt="ASZ Logo" style="width:36px;height:34px;object-fit:contain;border-radius:6px;"></div>
-        <div class="nav-logo-text" style="color:#fff;">Oberschule Am Sportzentrum<span style="color:rgba(255,255,255,0.5);">Riesa · Sachsen</span></div>
-      </a>
+      <div class="footer-brand-logo"><img src="../fileadmin/_processed_/2/9/csm_Logo-MamSZ_24bc79436c.jpg" alt="ASZ Logo"><div class="footer-brand-logo-text">Oberschule Am Sportzentrum<span>Riesa · Sachsen</span></div></div>
       <p>Eine staatliche Oberschule in Riesa, gefördert durch den Sächsischen Bildungsserver und das Startchancen-Programm.</p>
     </div>
     <div class="footer-col"><h4>Schule</h4><ul><li><a href="/asz-riesa/schulprofil.html">Schulprofil</a></li><li><a href="/asz-riesa/schulinfos.html">Schulinfos</a></li><li><a href="/asz-riesa/termine.html">Termine</a></li><li><a href="/asz-riesa/bilder.html">Bilder</a></li><li><a href="/asz-riesa/archiv.html">Archiv</a></li></ul></div>
     <div class="footer-col"><h4>Gemeinschaft</h4><ul><li><a href="/asz-riesa/mitwirkung.html">Mitwirkung</a></li><li><a href="/asz-riesa/foerderverein.html">Förderverein</a></li><li><a href="/asz-riesa/kontakt.html">Kontakt</a></li></ul></div>
     <div class="footer-col"><h4>Rechtliches</h4><ul><li><a href="/asz-riesa/impressum.html">Impressum</a></li><li><a href="/asz-riesa/datenschutz.html">Datenschutz</a></li><li><a href="/asz-riesa/barrierefreiheit.html">Barrierefreiheit</a></li></ul></div>
   </div>
-  <div class="footer-bottom"><div class="footer-bottom-inner"><span>© 2025 Oberschule Am Sportzentrum Riesa</span><span>Bereitgestellt mit Unterstützung des <a href="https://www.sachsen.schule" target="_blank" rel="noreferrer">Sächsischen Bildungsservers</a></span></div></div>
+  <div class="footer-bottom"><div class="footer-bottom-inner"><span>© 2025 Oberschule Am Sportzentrum Riesa</span><span>Unterstützt durch den <a href="https://www.sachsen.schule" target="_blank" rel="noreferrer">Sächsischen Bildungsserver</a></span></div></div>
 </footer>
 <script>
-  function toggleNav(){document.getElementById('mobileNav').classList.toggle('open');}
-  const reveals=document.querySelectorAll('.reveal');
-  const obs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);obs.unobserve(e.target);}});},{threshold:0.08});
-  reveals.forEach(el=>obs.observe(el));
+  function toggleNav(){const n=document.getElementById('mobileNav');const b=document.getElementById('menuBtn');n.classList.toggle('open');b.classList.toggle('open');document.body.style.overflow=n.classList.contains('open')?'hidden':'';}
+  document.querySelectorAll('.mobile-nav a').forEach(a=>{a.addEventListener('click',()=>{document.getElementById('mobileNav').classList.remove('open');document.getElementById('menuBtn').classList.remove('open');document.body.style.overflow='';});});
+  const obs=new IntersectionObserver((e)=>{e.forEach((en,i)=>{if(en.isIntersecting){setTimeout(()=>en.target.classList.add('visible'),i*80);obs.unobserve(en.target);}});},{threshold:0.06});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>

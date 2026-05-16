@@ -71,7 +71,9 @@
   .info-box p{font-size:0.875rem;color:var(--ink2);font-weight:300;line-height:1.6;}
 
   footer{background:var(--ink);color:rgba(255,255,255,0.6);margin-top:5rem;}
-  .footer-inner{max-width:1200px;margin:0 auto;padding:3rem clamp(1rem,4vw,3rem) 2rem;display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:2.5rem;}
+  .footer-inner{max-width:1200px;margin:0 auto;padding:2.5rem 1rem 1.5rem;display:grid;grid-template-columns:1fr;gap:1.5rem;}
+  @media(min-width:600px){.footer-inner{grid-template-columns:1fr 1fr;padding:2.5rem 1.5rem 1.5rem;}}
+  @media(min-width:1000px){.footer-inner{grid-template-columns:1.5fr repeat(3,1fr);padding:3rem 3rem 2rem;}}
   .footer-col h4{font-family:'Syne',sans-serif;font-weight:600;font-size:0.85rem;color:#fff;letter-spacing:0.04em;margin-bottom:1rem;text-transform:uppercase;}
   .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:6px;}
   .footer-col ul a{font-size:0.85rem;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s;}
@@ -113,7 +115,7 @@
       <li><a href="/asz-riesa/foerderverein.html">Förderverein</a></li>
       <li><a href="/asz-riesa/kontakt.html">Kontakt</a></li>
     </ul>
-    <button class="nav-menu-btn" onclick="toggleNav()" aria-label="Menü"><span></span><span></span><span></span></button>
+    <button class="nav-menu-btn" id="menuBtn" onclick="toggleNav()" aria-label="Menü"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="mobile-nav" id="mobileNav">
@@ -364,7 +366,20 @@
 </footer>
 
 <script>
-  function toggleNav(){document.getElementById('mobileNav').classList.toggle('open');}
+  function toggleNav(){
+    const nav=document.getElementById('mobileNav');
+    const btn=document.getElementById('menuBtn');
+    nav.classList.toggle('open');
+    btn.classList.toggle('open');
+    document.body.style.overflow=nav.classList.contains('open')?'hidden':'';
+  }
+  document.querySelectorAll('.mobile-nav a').forEach(a=>{
+    a.addEventListener('click',()=>{
+      document.getElementById('mobileNav').classList.remove('open');
+      document.getElementById('menuBtn').classList.remove('open');
+      document.body.style.overflow='';
+    });
+  });
 
   function showAlbum(id, tab) {
     document.querySelectorAll('.album-section').forEach(s => s.classList.remove('active'));
